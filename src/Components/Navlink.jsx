@@ -16,7 +16,7 @@ const Navlink = async () => {
         {Nav_link_data.map((cate, ind) => (
           <div key={ind} className="flex items-center gap-2">
             <span>{cate.icon}</span>
-            <Link href={cate.slug}> {cate.nameBn}</Link>
+            <Link href={`/Category/${cate.slug}`}> {cate.nameBn}</Link>
           </div>
         ))}
       </div>

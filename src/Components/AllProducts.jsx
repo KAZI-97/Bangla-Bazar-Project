@@ -50,6 +50,7 @@ const AllProductsPage = async () => {
       <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 p-2.5">
         {All_Product_Data.map((productData) => (
           <Link
+            id ='all-product'
             key={productData.id}
             href={`ProductDetails/${productData.id}`}
             className="block bg-white rounded-2xl border border-gray-100 shadow-sm p-4 hover:shadow-md transition"
