@@ -51,7 +51,7 @@ const AllProductsPage = async () => {
         {All_Product_Data.map((productData) => (
           <Link
             key={productData.id}
-            href={`/products/${productData.slug}`}
+            href={`ProductDetails/${productData.id}`}
             className="block bg-white rounded-2xl border border-gray-100 shadow-sm p-4 hover:shadow-md transition"
           >
             <div className="flex items-center gap-3">

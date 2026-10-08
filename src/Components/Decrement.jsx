@@ -22,7 +22,7 @@ const Price_Decrement = async() => {
                         reduce_price.change.dir == 'down'
                         
                     )).sort((a, b) => a.change.pct - b.change.pct).slice(0,6).map((reduce_price) => (
-                        <Link key={reduce_price.id} href={`/products/${reduce_price.slug}`} className='block bg-white rounded-2xl border border-gray-100 shadow-sm p-4 hover:shadow-md transition'>
+                        <Link key={reduce_price.id} href={`ProductDetails/${reduce_price.id}`} className='block bg-white rounded-2xl border border-gray-100 shadow-sm p-4 hover:shadow-md transition'>
                             <div className='flex items-center gap-3'>
                                 <div className='w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-2xl'>
                                     {reduce_price.image}

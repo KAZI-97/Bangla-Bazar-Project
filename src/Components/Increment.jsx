@@ -22,7 +22,7 @@ const Price_Increment = async() => {
                         price.change.dir == 'up'
                         
                     )).sort((a, b) => b.change.pct - a.change.pct).slice(0,6).map((price) => (
-                        <Link key={price.id} href={`/products/${price.slug}`} className='block bg-white rounded-2xl border border-gray-100 shadow-sm p-4 hover:shadow-md transition'>
+                        <Link key={price.id} href={`ProductDetails/${price.id}`} className='block bg-white rounded-2xl border border-gray-100 shadow-sm p-4 hover:shadow-md transition'>
                             <div className='flex items-center gap-3'>
                                 <div className='w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-2xl'>
                                     {price.image}
