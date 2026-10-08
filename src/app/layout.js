@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       data-theme="light"
       className={`${hind_Shiliguri.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-[#E1E8E1]">
         <Navbar></Navbar>
         <main>{children}</main>
       </body>
