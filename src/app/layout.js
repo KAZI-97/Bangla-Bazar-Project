@@ -1,10 +1,11 @@
-import { Noto_Serif_Bengali } from "next/font/google";
+import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/Components/Navbar";
 
-const notoSerifBengali = Noto_Serif_Bengali({
-  subsets: ["latin",'bengali'],
+const hind_Shiliguri = Hind_Siliguri({
+  subsets: ["latin", "bengali"],
+  weight: ["400", "500", "600", "700"],
 });
-
 
 export const metadata = {
   title: "Create Next App",
@@ -15,9 +16,13 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${notoSerifBengali.className} h-full antialiased`}
+      data-theme="light"
+      className={`${hind_Shiliguri.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Navbar></Navbar>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
