@@ -18,7 +18,7 @@ const NotFoundPage = () => {
           </p>{" "}
           <Link
             href="/"
-            className="inline-block mt-6 rounded-xl bg-green-600 px-6 py-3 text-white font-bold"
+            className="inline-block mt-6 rounded-xl bg-red-600 px-6 py-3 text-white font-bold"
           >
             {" "}
             হোম পেজে ফিরে যান{" "}
