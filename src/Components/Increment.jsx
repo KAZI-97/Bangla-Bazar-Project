@@ -1,41 +1,3 @@
-// import React from 'react';
-// import { BsFillTriangleFill } from 'react-icons/bs';
-
-// const Increment_Price_Promise = async() =>{
-//     const res = fetch('https://api.api-store.workers.dev/api/bazardor/products')
-//     return (await res).json()
-
-// }
-
-// const Price_Increment = async() => {
-//     const Price_Data = await Increment_Price_Promise()
-//     return (
-//         <>
-//             <div className='flex max-w-5xl mx-auto gap-2.5 p-2.5 mt-4 items-center'>
-//                  <BsFillTriangleFill size={25}className="text-green-700" />
-//                  <h1 className='font-extrabold text-3xl'>আজ দাম বেড়েছে</h1>
-//             </div>
-//             <div>
-//                 {
-//                     Price_Data.filter((price)=>(
-//                         price.change.dir == 'up'
-                        
-//                     )).map((price) => (
-//                         <>
-//                         <div>
-//                             {/* cart data here */}
-//                         </div>
-                        
-//                         </>
-//                     ))
-//                 }
-//             </div>
-        
-//         </>
-//     );
-// };
-
-// export default Price_Increment;
 import React from 'react';
 import Link from 'next/link';
 import { BsFillTriangleFill } from 'react-icons/bs';
@@ -59,7 +21,7 @@ const Price_Increment = async() => {
                     Price_Data.filter((price)=>(
                         price.change.dir == 'up'
                         
-                    )).map((price) => (
+                    )).sort((a, b) => b.change.pct - a.change.pct).slice(0,6).map((price) => (
                         <Link key={price.id} href={`/products/${price.slug}`} className='block bg-white rounded-2xl border border-gray-100 shadow-sm p-4 hover:shadow-md transition'>
                             <div className='flex items-center gap-3'>
                                 <div className='w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-2xl'>
