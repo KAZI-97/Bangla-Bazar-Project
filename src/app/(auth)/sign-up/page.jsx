@@ -1,5 +1,6 @@
 "use client";
 import { signUp } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 import { FloppyDisk } from "@gravity-ui/icons";
 import {
   Button,
@@ -16,6 +17,7 @@ import {
 import { toast } from "react-toastify";
 
 export default function SignUp() {
+  const router = useRouter();
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -25,14 +27,14 @@ export default function SignUp() {
       name: Userdata.name,
       email: Userdata.email,
       password: Userdata.password,
-      callbackURL: "/sign-in",
     });
     if (error) {
       toast.error(error.message || "রেজিস্ট্রেশন ব্যর্থ হয়েছে");
       return;
     }
     toast.success("আপনি সফলভাবে রেজিস্ট্রেশন কমপ্লিট করেছেন ");
-    console.log(data, error);
+    router.push("/sign-in");
+   
   };
 
   return (

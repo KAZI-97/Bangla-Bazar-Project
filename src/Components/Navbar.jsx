@@ -3,6 +3,7 @@ import React from "react";
 import Logo from "../../public/asset/logo-icon.png";
 import Navlink from "./Navlink";
 import Marquee_Link from "./Marquee";
+import AuthButtons from "./AuthButton";
 
 const Navbar = () => {
   const date = new Date().toLocaleDateString("bn-BD", {
@@ -27,18 +28,7 @@ const Navbar = () => {
               {date}
             </div>
           </div>
-          <div className="flex gap-2 items-center justify-center">
-            <div className="rounded-2xl">
-              <button className="text-[#1D271F] text-2xl p-3 font-bold">
-                সাইন ইন
-              </button>
-            </div>
-            <div>
-              <button className=" text-[#F3FBF4] text-2xl drop-shadow-xl p-3 rounded-2xl bg-green-700">
-                সাইন আপ
-              </button>
-            </div>
-          </div>
+           <AuthButtons />
         </div>
       </div>
       <div>
