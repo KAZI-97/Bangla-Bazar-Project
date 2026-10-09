@@ -1,6 +1,7 @@
 import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
+import { ToastContainer } from "react-toastify";
 
 const hind_Shiliguri = Hind_Siliguri({
   subsets: ["latin", "bengali"],
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col bg-[#E1E8E1]">
         <Navbar></Navbar>
         <main>{children}</main>
+        <ToastContainer />
       </body>
     </html>
   );
