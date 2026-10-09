@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useSession, signOut } from "@/lib/auth-client";
 import LoadingPage from "../app/loading";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const AuthButtons = () => {
   const { data: session, isPending } = useSession();
@@ -22,7 +23,7 @@ const AuthButtons = () => {
       <div className="relative group">
         <div className="flex items-center gap-3 cursor-pointer">
           {user.image ? (
-            <img src={user.image} alt="" className="w-12 h-12 rounded-full" />
+            <Image src={user.image} alt="" width={50} height={50} className="w-12 h-12 rounded-full" />
           ) : (
             <div className="w-12 h-12 rounded-full bg-green-700 text-white flex items-center justify-center text-xl font-bold">
               {user.name?.charAt(0)}

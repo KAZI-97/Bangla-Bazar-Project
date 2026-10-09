@@ -4,6 +4,7 @@ import Logo from "../../public/asset/logo-icon.png";
 import Navlink from "./Navlink";
 import Marquee_Link from "./Marquee";
 import AuthButtons from "./AuthButton";
+import Link from "next/link";
 
 const Navbar = () => {
   const date = new Date().toLocaleDateString("bn-BD", {
@@ -15,20 +16,22 @@ const Navbar = () => {
         <div className="flex max-w-5xl mx-auto w-full justify-between items-center p-4 ">
           <div className="flex justify-center items-center gap-3">
             <div className="bg-green-500  rounded-2xl">
-              <Image
-                className="p-5"
-                src={Logo}
-                alt=""
-                height={50}
-                width={50}
-              ></Image>
+              <Link href='/'>
+                <Image
+                  className="p-5"
+                  src={Logo}
+                  alt=""
+                  height={50}
+                  width={50}
+                ></Image>
+              </Link>
             </div>
             <div className="space-y-2">
               <h1 className="font-extrabold text-4xl">বাজার দর</h1>
               {date}
             </div>
           </div>
-           <AuthButtons />
+          <AuthButtons />
         </div>
       </div>
       <div>

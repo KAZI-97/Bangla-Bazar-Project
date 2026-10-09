@@ -1,5 +1,5 @@
 "use client";
-import { signIn, signUp } from "@/lib/auth-client";
+import { signIn } from "@/lib/auth-client";
 import { FloppyDisk } from "@gravity-ui/icons";
 import {
   Button,
@@ -13,9 +13,30 @@ import {
   TextArea,
   TextField,
 } from "@heroui/react";
+import Link from "next/link";
 import { toast } from "react-toastify";
 
 export default function SignIn() {
+  const HandleSignInWithGithub = async () => {
+    const { data, error } = await signIn.social({
+      provider: "github",
+      callbackURL: "/",
+    });
+    if (error) {
+      toast.error(" গিটহাব দিয়ে প্রবেশ করা যায়নি");
+    }
+  };
+
+  const HandleSignInWithGoogle = async () => {
+    const { data, error } = await signIn.social({
+      provider: "google",
+      callbackURL: "/",
+    });
+    if (error) {
+      toast.error("গুগল দিয়ে প্রবেশ করা যায়নি");
+    }
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -28,7 +49,6 @@ export default function SignIn() {
     });
     if (error) {
       toast.error("ইমেইল বা পাসওয়ার্ড ভুল হয়েছে");
-
     }
     toast.success("আপনি সফলভাবে প্রবেশ করেছেন ");
   };
@@ -69,7 +89,7 @@ export default function SignIn() {
                 }}
               >
                 <Label>পাসওয়ার্ড</Label>
-                <Input placeholder="আপনার পাসওয়ার্ড লিখুন" />
+                <Input type="password" placeholder="আপনার পাসওয়ার্ড লিখুন" />
                 <FieldError />
               </TextField>
             </FieldGroup>
@@ -94,6 +114,7 @@ export default function SignIn() {
 
           {/* Google */}
           <button
+            onClick={() => HandleSignInWithGoogle()}
             type="button"
             className="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 rounded-xl py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50 hover:shadow-sm transition cursor-pointer"
           >
@@ -121,6 +142,7 @@ export default function SignIn() {
           {/* GitHub */}
           <button
             type="button"
+            onClick={() => HandleSignInWithGithub()}
             className="w-full flex items-center justify-center gap-3 bg-gray-900 rounded-xl py-2.5 text-sm font-semibold text-white hover:bg-gray-800 hover:shadow-sm transition cursor-pointer"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -128,6 +150,17 @@ export default function SignIn() {
             </svg>
             GitHub দিয়ে চালিয়ে যান
           </button>
+        </div>
+        <div className="w-full max-w-96 mt-6 flex items-center justify-center gap-3">
+          <span className="text-sm font-semibold text-gray-600">
+            অ্যাকাউন্ট নেই?
+          </span>
+          <Link
+            href="/sign-up"
+            className="hover:underline text-green-700 rounded-xl px-4 py-2 text-sm font-bold"
+          >
+            সাইন আপ করুন
+          </Link>
         </div>
       </div>
     </>
