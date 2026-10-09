@@ -1,5 +1,5 @@
 "use client";
-import { signUp } from "@/lib/auth-client";
+import { signIn, signUp } from "@/lib/auth-client";
 import { FloppyDisk } from "@gravity-ui/icons";
 import {
   Button,
@@ -21,18 +21,16 @@ export default function SignIn() {
     const formData = new FormData(e.currentTarget);
     const Userdata = Object.fromEntries(formData.entries());
 
-    const { data, error } = await signUp.email({
-      name: Userdata.name,
+    const { data, error } = await signIn.email({
       email: Userdata.email,
       password: Userdata.password,
       callbackURL: "/",
     });
     if (error) {
-      toast.error(error.message || "রেজিস্ট্রেশন ব্যর্থ হয়েছে");
-      return;
+      toast.error("ইমেইল বা পাসওয়ার্ড ভুল হয়েছে");
+
     }
-    toast.success("আপনি সফলভাবে রেজিস্ট্রেশন কমপ্লিট করেছেন ");
-    console.log(data, error);
+    toast.success("আপনি সফলভাবে প্রবেশ করেছেন ");
   };
 
   return (
@@ -72,7 +70,6 @@ export default function SignIn() {
               >
                 <Label>পাসওয়ার্ড</Label>
                 <Input placeholder="আপনার পাসওয়ার্ড লিখুন" />
-                <Description>কমপক্ষে ৮ অক্ষর লিখতে হবে</Description>
                 <FieldError />
               </TextField>
             </FieldGroup>
