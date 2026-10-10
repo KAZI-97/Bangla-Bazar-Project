@@ -122,7 +122,8 @@ import { notFound } from "next/navigation";
 const Product_Details_Page = async ({ params }) => {
   const { productid } = await params;
   const res = await fetch(
-    `https://api.api-store.workers.dev/api/bazardor/products/${productid}`,
+    // `https://api.api-store.workers.dev/api/bazardor/products/${productid}`,
+    `https://openapi.programming-hero.com/api/bazardor/products/${productid}`,
   );
   if (!res.ok) {
     notFound();

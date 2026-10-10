@@ -60,7 +60,9 @@ import Link from 'next/link';
 import { BsFillTriangleFill } from 'react-icons/bs';
 
 const Increment_Price_Promise = async() =>{
-    const res = fetch('https://api.api-store.workers.dev/api/bazardor/products')
+    const res = fetch(
+        // 'https://api.api-store.workers.dev/api/bazardor/products')
+        'https://openapi.programming-hero.com/api/bazardor/products')
     return (await res).json()
 
 }

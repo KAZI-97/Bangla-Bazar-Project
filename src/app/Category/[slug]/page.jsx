@@ -197,7 +197,8 @@ import { notFound } from "next/navigation";
 const CategoryData = async ({ params }) => {
   const { slug } = await params;
   const res = await fetch(
-    `https://api.api-store.workers.dev/api/bazardor/products?category=${slug}`,
+    // `https://api.api-store.workers.dev/api/bazardor/products?category=${slug}`,
+    `https://openapi.programming-hero.com/api/bazardor/products?category=${slug}`,
   );
   const Category_Data = await res.json();
 

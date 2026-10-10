@@ -120,7 +120,8 @@ import { PiApproximateEquals } from "react-icons/pi";
 
 const Marquee_Promise = async () => {
   const res = await fetch(
-    "https://api.api-store.workers.dev/api/bazardor/products",
+    // "https://api.api-store.workers.dev/api/bazardor/products",
+    "https://openapi.programming-hero.com/api/bazardor/products",
   );
   return res.json();
 };
