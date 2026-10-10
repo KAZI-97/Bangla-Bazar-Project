@@ -117,7 +117,7 @@ const CategoryClientpage = ({ Category_Data }) => {
     sortedData.sort((a, b) => Number(a.today) - Number(b.today));
   if (sortprice === "des_price")
     sortedData.sort((a, b) => Number(b.today) - Number(a.today));
-
+  
   return (
     <div className="min-h-screen w-full bg-[#f3f6f4]">
       <div className="max-w-5xl mx-auto p-3 sm:p-4 space-y-3 sm:space-y-4">
@@ -201,4 +201,4 @@ const CategoryClientpage = ({ Category_Data }) => {
   );
 };
 
-export default CategoryClientpage;
+export default CategoryClientpage; 

@@ -190,6 +190,7 @@
 import React from "react";
 import CategoryClientpage from "./CategoryData";
 import NotFoundPage from "@/app/not-found";
+import { notFound } from "next/navigation";
 
 
 
@@ -200,7 +201,9 @@ const CategoryData = async ({ params }) => {
   );
   const Category_Data = await res.json();
 
-  if (Category_Data.length === 0) NotFoundPage();
+  if (!Array.isArray(Category_Data) || Category_Data.length === 0) {
+    notFound();
+  }
   return <CategoryClientpage Category_Data={Category_Data}></CategoryClientpage>
 }
 export default CategoryData
