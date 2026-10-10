@@ -65,7 +65,7 @@ const UpdateUserPage = ({ name }) => {
       return;
     }
     toast.success("সফলভাবে আপডেট হয়েছে");
-    router.refresh();
+    router.push('/')
   };
 
   return (

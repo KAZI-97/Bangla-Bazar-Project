@@ -197,6 +197,7 @@ export default function SignIn() {
     });
     if (error) {
       toast.error(" গিটহাব দিয়ে প্রবেশ করা যায়নি");
+      return
     }
   };
 
@@ -207,6 +208,7 @@ export default function SignIn() {
     });
     if (error) {
       toast.error("গুগল দিয়ে প্রবেশ করা যায়নি");
+      return
     }
   };
 
@@ -222,6 +224,7 @@ export default function SignIn() {
     });
     if (error) {
       toast.error("ইমেইল বা পাসওয়ার্ড ভুল হয়েছে");
+      return
     }
     toast.success("আপনি সফলভাবে প্রবেশ করেছেন ");
   };
