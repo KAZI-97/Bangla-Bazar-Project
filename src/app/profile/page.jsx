@@ -46,7 +46,9 @@ export default function ProfilePage() {
                   signOut({
                     fetchOptions: { onSuccess: () => router.push("/sign-in") },
                   })
+        
                 }
+                
                 className="border border-red-500 text-red-600 text-sm font-semibold px-4 py-2 rounded-lg cursor-pointer hover:bg-red-50"
               >
                 ↩ সাইন আউট

@@ -2,6 +2,7 @@ import { Hind_Siliguri } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
 import { ToastContainer } from "react-toastify";
+import FooterPage from "@/Components/Footer";
 // import Marquee_Link from "@/Components/Marquee";
 
 const hind_Shiliguri = Hind_Siliguri({
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
         <Navbar></Navbar>
         <main>{children}</main>
         <ToastContainer />
+        <FooterPage></FooterPage>
       </body>
     </html>
   );

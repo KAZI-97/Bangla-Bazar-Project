@@ -163,6 +163,9 @@ export default function SignIn() {
           </Link>
         </div>
       </div>
+      <div className="flex justify-center items-center">
+        <Link href='/' className="text-xl hover:underline hover:bg-green-200">← হোম পেজে ফিরে যান</Link>
+      </div>
     </>
   );
 }
