@@ -34,7 +34,7 @@
 //     }
 //     toast.success("আপনি সফলভাবে রেজিস্ট্রেশন কমপ্লিট করেছেন ");
 //     router.push("/sign-in");
-   
+
 //   };
 
 //   return (
@@ -125,6 +125,7 @@ import {
   TextField,
 } from "@heroui/react";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 export default function SignUp() {
   const router = useRouter();
@@ -144,7 +145,6 @@ export default function SignUp() {
     }
     toast.success("আপনি সফলভাবে রেজিস্ট্রেশন কমপ্লিট করেছেন ");
     router.push("/sign-in");
-   
   };
 
   return (
@@ -171,12 +171,23 @@ export default function SignUp() {
               }}
             >
               <Label className="text-sm sm:text-base">নাম</Label>
-              <Input className="w-full text-base" placeholder="আপনার নাম লিখুন" />
+              <Input
+                className="w-full text-base"
+                placeholder="আপনার নাম লিখুন"
+              />
               <FieldError />
             </TextField>
-            <TextField isRequired name="email" type="email" className="w-full min-w-0">
+            <TextField
+              isRequired
+              name="email"
+              type="email"
+              className="w-full min-w-0"
+            >
               <Label className="text-sm sm:text-base">ইমেইল</Label>
-              <Input className="w-full text-base" placeholder="আপনার ইমেইল লিখুন" />
+              <Input
+                className="w-full text-base"
+                placeholder="আপনার ইমেইল লিখুন"
+              />
               <FieldError />
             </TextField>
             <TextField
@@ -199,8 +210,13 @@ export default function SignUp() {
               }}
             >
               <Label className="text-sm sm:text-base">পাসওয়ার্ড</Label>
-              <Input className="w-full text-base" placeholder="আপনার পাসওয়ার্ড লিখুন" />
-              <Description className="text-xs sm:text-sm">কমপক্ষে ৮ অক্ষর লিখতে হবে</Description>
+              <Input
+                className="w-full text-base"
+                placeholder="আপনার পাসওয়ার্ড লিখুন"
+              />
+              <Description className="text-xs sm:text-sm">
+                কমপক্ষে ৮ অক্ষর লিখতে হবে
+              </Description>
               <FieldError />
             </TextField>
           </FieldGroup>
@@ -209,12 +225,18 @@ export default function SignUp() {
               <FloppyDisk />
               রেজিস্ট্রার
             </Button>
-            <Button type="reset" variant="secondary" className="w-full sm:w-auto">
-              বাতিল করুন
-            </Button>
           </Fieldset.Actions>
         </Fieldset>
+        <div className="flex justify-center items-center px-4 pb-6 text-center">
+        <Link
+          href="/"
+          className="text-base sm:text-xl hover:underline hover:bg-green-200"
+        >
+          ← হোম পেজে ফিরে যান
+        </Link>
+      </div>
       </Form>
+      
     </div>
   );
 }

@@ -36,7 +36,7 @@
 //         {/* sort area */}
 //         <div className="bg-white rounded-2xl border border-gray-200 p-4 flex items-center justify-end gap-3">
 //           <span className="text-sm text-gray-600">সাজান</span>
-//           <select 
+//           <select
 //           value={sortprice}
 //           onChange={(e) => setsortprice(e.target.value)}
 //           className="border border-gray-300 rounded-lg px-3 py-1.5 text-sm bg-white">
@@ -101,7 +101,7 @@
 // export default CategoryClientpage;
 
 // After Responsive
-'use client'
+"use client";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -117,7 +117,7 @@ const CategoryClientpage = ({ Category_Data }) => {
     sortedData.sort((a, b) => Number(a.today) - Number(b.today));
   if (sortprice === "des_price")
     sortedData.sort((a, b) => Number(b.today) - Number(a.today));
-  
+
   return (
     <div className="min-h-screen w-full bg-[#f3f6f4]">
       <div className="max-w-5xl mx-auto p-3 sm:p-4 space-y-3 sm:space-y-4">
@@ -138,11 +138,14 @@ const CategoryClientpage = ({ Category_Data }) => {
 
         {/* sort area */}
         <div className="bg-white rounded-2xl border border-gray-200 p-3 sm:p-4 flex items-center justify-end gap-2 sm:gap-3">
-          <span className="text-xs sm:text-sm text-gray-600 shrink-0">সাজান</span>
-          <select 
-          value={sortprice}
-          onChange={(e) => setsortprice(e.target.value)}
-          className="min-w-0 max-w-full border border-gray-300 rounded-lg px-2 sm:px-3 py-1.5 text-sm bg-white">
+          <span className="text-xs sm:text-sm text-gray-600 shrink-0">
+            সাজান
+          </span>
+          <select
+            value={sortprice}
+            onChange={(e) => setsortprice(e.target.value)}
+            className="min-w-0 max-w-full border border-gray-300 rounded-lg px-2 sm:px-3 py-1.5 text-sm bg-white"
+          >
             <option value="default">ডিফল্ট</option>
             <option value="asc_price">দাম: কম থেকে বেশি</option>
             <option value="des_price">দাম: বেশি থেকে কম</option>
@@ -183,7 +186,9 @@ const CategoryClientpage = ({ Category_Data }) => {
                     <p className="text-xs text-gray-500">আজকের দাম</p>
                     <p className="font-extrabold text-base sm:text-lg">
                       {product.today}{" "}
-                      <span className="font-normal text-sm sm:text-base">টাকা</span>
+                      <span className="font-normal text-sm sm:text-base">
+                        টাকা
+                      </span>
                     </p>
                   </div>
                   <span
@@ -196,9 +201,18 @@ const CategoryClientpage = ({ Category_Data }) => {
             );
           })}
         </div>
+        <div className="flex justify-center pt-2 pb-6 sm:pb-8">
+          <Link
+            href="/"
+            className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-green-700 px-6 py-3 text-sm sm:text-base font-bold text-white shadow-md transition hover:bg-green-800 active:scale-95"
+          >
+            <span aria-hidden="true">←</span>
+            হোম পেজে ফিরে যান
+          </Link>
+        </div>
       </div>
     </div>
   );
 };
 
-export default CategoryClientpage; 
+export default CategoryClientpage;
